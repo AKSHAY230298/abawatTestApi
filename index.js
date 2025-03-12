@@ -7,12 +7,12 @@ const app = express()
 
 
 const corsOption = {
-    origin: "*",
+    origin: "http://localhost:4200",
     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
     credentials: true,
   };
 
-app.use(cors(corsOption));
+app.use("*",cors(corsOption));
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({extended:true}));
