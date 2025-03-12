@@ -1,9 +1,9 @@
 const express = require("express")
-const app = express()
 const port = 8000;
 const cors = require("cors");
 const dbConnect = require("./db/dbConnect");
 const matDetailsRouter = require("./route/matDetailsRoute")
+const app = express()
 
 
 const corsOption = {
