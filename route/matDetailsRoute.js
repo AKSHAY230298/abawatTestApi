@@ -4,7 +4,7 @@ const router = exoress.Router()
 
 router.post("/matDetails", handleMatDetails)
 
-router.post("/test",(req,res)=>{
+router.get("/test",(req,res)=>{
     res.status(200).json({
         message:"Working OK"
         
