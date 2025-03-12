@@ -3,23 +3,20 @@ const MatDetails = require("../models/matDetails");
 async function handleMatDetails(req,res){
     try {
   const {type,subject,team,department} = req.body;
-  const matData = MatDetails.find()
+  const matData = new MatDetails({
+    type:type,
+    subject:subject,
+    team:team,
+    department:department
+  })
 
-        if(!matData){
-          return  res
-           .status(400)
-            . json({
-                message:"Data is empty",
-                success:false
-            })
-
-            
-        }
+ await matData.save()
+ 
+      
         return res.status(200)
         .json({
-            message:"ok",
+            message:"data saved",
             success:true,
-            matData : matData
         })
     } catch (error) {
         console.log(error);
