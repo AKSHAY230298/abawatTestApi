@@ -5,13 +5,14 @@ const cors = require("cors");
 const dbConnect = require("./db/dbConnect");
 const matDetailsRouter = require("./route/matDetailsRoute")
 
+
 const corsOption = {
     origin: "*",
     methods: "GET,POST,DELETE,PUT,PATCH,HEAD",
     credentials: true,
   };
 
-app.use("*",cors(corsOption));
+app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({extended:true}));
